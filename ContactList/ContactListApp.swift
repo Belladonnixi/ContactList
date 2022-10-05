@@ -13,7 +13,9 @@ struct ContactListApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContactList()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            AddContact()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
