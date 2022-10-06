@@ -12,7 +12,6 @@ struct ContactRow: View {
 
     @ObservedObject var contact: Contact
     
-    
     var body: some View {
         HStack {
             Image(systemName: "person.circle.fill")

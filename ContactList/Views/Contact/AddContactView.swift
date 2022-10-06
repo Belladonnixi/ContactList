@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct AddContact: View {
+struct AddContactView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     
@@ -159,6 +159,6 @@ struct AddContact: View {
 
 struct AddContact_Previews: PreviewProvider {
     static var previews: some View {
-        AddContact()
+        AddContactView()
     }
 }

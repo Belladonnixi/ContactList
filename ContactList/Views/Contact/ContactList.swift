@@ -17,6 +17,8 @@ struct ContactList: View {
     private var contacts: FetchedResults<Contact>
     
     @State private var addViewShown = false
+    
+    let viewModel = ContactListViewModel()
         
     let backgroundGradient = LinearGradient(
         colors: [Color.teal, Color.blue],
@@ -28,14 +30,18 @@ struct ContactList: View {
             List {
                 ForEach(contacts) { contact in
                     NavigationLink {
-                        AddContact(contactId: contact.objectID)
+                        AddContactView(contactId: contact.objectID)
                     } label: {
                         ContactRow(contact: contact)
                     }
                 }
                 .onDelete { indexSet in
                     withAnimation {
-                       deleteItems(offsets: indexSet)
+                        viewModel.deleteItems(
+                            for: indexSet,
+                            contacts: contacts,
+                            viewContext: viewContext
+                        )
                     }
                 }
                 .listRowBackground(backgroundGradient)
@@ -49,23 +55,9 @@ struct ContactList: View {
                 }
             }
             .sheet(isPresented: $addViewShown) {
-                AddContact()
+                AddContactView()
             }
             .navigationTitle("Contact List")
-        }
-    }
-    
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { contacts[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
         }
     }
 }
