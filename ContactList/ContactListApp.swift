@@ -13,10 +13,10 @@ struct ContactListApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContactList()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            AddContact()
+            ContactList()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            AddContact()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
