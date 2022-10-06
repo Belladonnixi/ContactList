@@ -28,9 +28,7 @@ struct AddContactView: View {
     
     var body: some View {
         NavigationView {
-                
             VStack {
-                               
                 Form {
                     Section {
                         HStack {
@@ -102,7 +100,6 @@ struct AddContactView: View {
                             }
                         }
                     }
-                    
                 }
                 
                 Button {
@@ -135,9 +132,8 @@ struct AddContactView: View {
                 .buttonBorderShape(.roundedRectangle(radius: 5))
                 .controlSize(.large)
             }
-            .navigationTitle("\(contactId == nil ? "Add Contact" : "Edit Contact")")
-            Spacer()
         }
+        .navigationTitle("\(contactId == nil ? "Add Contact" : "Edit Contact")")
         .onAppear {
             guard
                 let objectId = contactId,

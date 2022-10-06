@@ -12,16 +12,18 @@ struct ContactList: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [],
+        sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)],
         animation: .default)
     private var contacts: FetchedResults<Contact>
     
     @State private var addViewShown = false
     
+    
+    
     let viewModel = ContactListViewModel()
         
     let backgroundGradient = LinearGradient(
-        colors: [Color.teal, Color.blue],
+        colors: [Color.teal, Color.indigo],
         startPoint: .top, endPoint: .bottom)
     
     var body: some View {
@@ -48,15 +50,19 @@ struct ContactList: View {
                 
             }
             .toolbar {
-                Button {
-                    addViewShown = true
-                } label: {
-                    Image(systemName: "plus.circle")
+                NavigationLink(destination: AddContactView(),
+                               isActive: $addViewShown) {
+                    Button {
+                        addViewShown = true
+                    } label: {
+                        Image(systemName: "plus.circle")
+                    }
                 }
-            }
-            .sheet(isPresented: $addViewShown) {
-                AddContactView()
-            }
+                    
+                }
+//            .sheet(isPresented: $addViewShown) {
+//                AddContactView()
+//            }
             .navigationTitle("Contact List")
         }
     }
