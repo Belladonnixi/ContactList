@@ -23,6 +23,11 @@ struct AddContactView: View {
     @State private var birthdate = Date()
     @State private var nameError = false
     
+    // MARK: - ImagePicker
+    @State private var image: Image?
+    @State private var selectedImage = UIImage()
+    @State private var showSheet = false
+    
     var contactId: NSManagedObjectID?
     let viewModel = AddContactViewModel()
     
@@ -32,9 +37,7 @@ struct AddContactView: View {
                 Form {
                     Section {
                         HStack {
-                            Image(systemName: avatarName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
+                            CircleImage(image: Image(uiImage: self.selectedImage))
                                 .frame(width: 100, height: 100)
                                 .padding()
                                 .foregroundColor(Color.gray)
@@ -49,6 +52,15 @@ struct AddContactView: View {
                                     .frame(width: 50, height: 50)
                                     .foregroundColor(Color.teal)
                             }
+                            .onTapGesture {
+                                showSheet = true
+                            }
+                            .sheet(isPresented: $showSheet) {
+                                        // Pick an image from the photo library:
+                                    ImagePicker(sourceType: .photoLibrary, selectedImage: self.$selectedImage)
+
+                                       
+                                }
                         }
                     }
                     Section("Contact Info") {
@@ -147,6 +159,7 @@ struct AddContactView: View {
             email = contact.email!
             birthdate = contact.birthdate!
             notes = contact.notes!
+//            selectedImage = UIImage(data: contact.picture!)!
         }
         
     }

@@ -14,10 +14,9 @@ struct ContactRow: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "person.circle.fill")
-                .resizable()
+            CircleImage(image: Image("doctor"))
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
+                .frame(width: 60, height: 60)
             VStack(alignment: .leading) {
                 Text("\(contact.name ?? "") \(contact.lastName ?? "")")
                     .font(.headline)

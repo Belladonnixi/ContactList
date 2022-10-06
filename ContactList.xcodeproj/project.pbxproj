@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D42FE2428EEF6F8003B1052 /* ContactListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42FE2328EEF6F8003B1052 /* ContactListViewModel.swift */; };
+		1D42FE2628EF3638003B1052 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42FE2528EF3638003B1052 /* ImagePicker.swift */; };
+		1D42FE2928EF3B20003B1052 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42FE2828EF3B20003B1052 /* CircleImage.swift */; };
 		1D63989728E57BA20010191F /* ContactListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63989628E57BA20010191F /* ContactListApp.swift */; };
 		1D63989B28E57BA50010191F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D63989A28E57BA50010191F /* Assets.xcassets */; };
 		1D63989E28E57BA50010191F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D63989D28E57BA50010191F /* Preview Assets.xcassets */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		1D42FE2328EEF6F8003B1052 /* ContactListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		1D42FE2528EF3638003B1052 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		1D42FE2828EF3B20003B1052 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		1D63989328E57BA20010191F /* ContactList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D63989628E57BA20010191F /* ContactListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListApp.swift; sourceTree = "<group>"; };
 		1D63989A28E57BA50010191F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D42FE2728EF3AFE003B1052 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1D42FE2528EF3638003B1052 /* ImagePicker.swift */,
+				1D42FE2828EF3B20003B1052 /* CircleImage.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1D63988A28E57BA20010191F = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +124,7 @@
 				1D63989628E57BA20010191F /* ContactListApp.swift */,
 				1D6398C828E58B670010191F /* ViewModel */,
 				1D6398C728E586700010191F /* Views */,
+				1D42FE2728EF3AFE003B1052 /* Helpers */,
 				1D6398C628E586570010191F /* Model */,
 				1D63989A28E57BA50010191F /* Assets.xcassets */,
 				1D63989F28E57BA50010191F /* Persistence.swift */,
@@ -317,6 +331,8 @@
 				1D6398A328E57BA50010191F /* ContactList.xcdatamodeld in Sources */,
 				1D42FE2428EEF6F8003B1052 /* ContactListViewModel.swift in Sources */,
 				1DA6552528E59E0900111FE8 /* ContactRow.swift in Sources */,
+				1D42FE2628EF3638003B1052 /* ImagePicker.swift in Sources */,
+				1D42FE2928EF3B20003B1052 /* CircleImage.swift in Sources */,
 				1D6398A028E57BA50010191F /* Persistence.swift in Sources */,
 				1D63989728E57BA20010191F /* ContactListApp.swift in Sources */,
 			);

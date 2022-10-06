@@ -21,14 +21,14 @@ struct ContactList: View {
     
     
     let viewModel = ContactListViewModel()
-        
+    
     let backgroundGradient = LinearGradient(
         colors: [Color.teal, Color.indigo],
         startPoint: .top, endPoint: .bottom)
     
     var body: some View {
         NavigationView {
-         
+            
             List {
                 ForEach(contacts) { contact in
                     NavigationLink {
@@ -58,11 +58,7 @@ struct ContactList: View {
                         Image(systemName: "plus.circle")
                     }
                 }
-                    
-                }
-//            .sheet(isPresented: $addViewShown) {
-//                AddContactView()
-//            }
+            }
             .navigationTitle("Contact List")
         }
     }
