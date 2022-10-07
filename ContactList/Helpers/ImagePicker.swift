@@ -50,9 +50,3 @@ struct ImagePicker: UIViewControllerRepresentable {
 
     }
 }
-
-//struct ImagePicker_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImagePicker( selectedImage: <#Binding<UIImage>#>)
-//    }
-//}
