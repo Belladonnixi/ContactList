@@ -12,11 +12,13 @@ struct ContactRow: View {
 
     @ObservedObject var contact: Contact
     
+    let viewModel = AddContactViewModel()
+    
     var body: some View {
         HStack {
-            CircleImage(image: Image("doctor"))
+            CircleImage(image: Image(uiImage: viewModel.getImageFromData(contact: contact)))
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 60, height: 60)
+                .frame(width: 60, height: 60) 
             VStack(alignment: .leading) {
                 Text("\(contact.name ?? "") \(contact.lastName ?? "")")
                     .font(.headline)

@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 struct AddContactViewModel {
     func fetchContact(for objectId: NSManagedObjectID, context: NSManagedObjectContext) ->
@@ -42,4 +43,15 @@ struct AddContactViewModel {
           print("Save error: \(error)")
         }
     }
+    
+    func getImageFromData(contact: Contact) -> UIImage  {
+            //this is just a placeholder
+        var finalImage = (UIImage(systemName: "person.circle.fill"))
+            if let data = contact.picture {
+                if let image = UIImage(data: data as Data) {
+                    finalImage = image
+                    }
+                }
+                return finalImage!
+            }
 }

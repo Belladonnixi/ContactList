@@ -12,7 +12,6 @@ struct AddContactView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentation
     
-    @State var avatarName = "person.circle.fill"
     @State var pickerPresented = false
     @State private var name = ""
     @State private var lastName = ""
@@ -24,12 +23,13 @@ struct AddContactView: View {
     @State private var nameError = false
     
     // MARK: - ImagePicker
-    @State private var image: Image?
     @State private var selectedImage = UIImage()
     @State private var showSheet = false
+  
     
     var contactId: NSManagedObjectID?
     let viewModel = AddContactViewModel()
+    
     
     var body: some View {
         NavigationView {
@@ -56,11 +56,8 @@ struct AddContactView: View {
                                 showSheet = true
                             }
                             .sheet(isPresented: $showSheet) {
-                                        // Pick an image from the photo library:
-                                    ImagePicker(sourceType: .photoLibrary, selectedImage: self.$selectedImage)
-
-                                       
-                                }
+                                ImagePicker(selectedImage: $selectedImage)
+                            }
                         }
                     }
                     Section("Contact Info") {
@@ -115,6 +112,8 @@ struct AddContactView: View {
                 }
                 
                 Button {
+
+                    let pickedImage = selectedImage.jpegData(compressionQuality: 1.0)
                     if name.isEmpty {
                         nameError = name.isEmpty
                     } else {
@@ -124,7 +123,8 @@ struct AddContactView: View {
                             email: email,
                             birthdate: birthdate,
                             notes: notes,
-                            picture: picture
+                            picture: pickedImage ?? Data()
+                            
                         )
                         
                         viewModel.saveContact(
@@ -159,7 +159,7 @@ struct AddContactView: View {
             email = contact.email!
             birthdate = contact.birthdate!
             notes = contact.notes!
-//            selectedImage = UIImage(data: contact.picture!)!
+            selectedImage = viewModel.getImageFromData(contact: contact)
         }
         
     }
