@@ -1,10 +1,10 @@
-//
-//  ContactValues.swift
-//  ContactList
-//
-//  Created by Jessica Ernst on 05.10.22.
-//  Copyright © 2022 Jessica Ernst. All rights reserved.
-//
+///
+///  ContactValues.swift
+///  ContactList
+///
+///  Created by Jessica Ernst on 05.10.22.
+///  Copyright © 2022 Jessica Ernst. All rights reserved.
+///
 
 import Foundation
 
