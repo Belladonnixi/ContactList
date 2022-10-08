@@ -3,6 +3,7 @@
 //  ContactList
 //
 //  Created by Jessica Ernst on 06.10.22.
+//  Copyright © 2022 Jessica Ernst. All rights reserved.
 //
 
 import CoreData
