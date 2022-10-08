@@ -1,10 +1,10 @@
-//
-//  AddContactViewModel.swift
-//  ContactList
-//
-//  Created by Jessica Ernst on 05.10.22.
-//  Copyright © 2022 Jessica Ernst. All rights reserved.
-//
+///
+///  AddContactViewModel.swift
+///  ContactList
+///
+///  Created by Jessica Ernst on 05.10.22.
+///  Copyright © 2022 Jessica Ernst. All rights reserved.
+///
 
 import CoreData
 import SwiftUI

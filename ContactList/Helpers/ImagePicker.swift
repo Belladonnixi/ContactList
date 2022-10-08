@@ -1,10 +1,10 @@
-//
-//  ImagePicker.swift
-//  ContactList
-//
-//  Created by Jessica Ernst on 06.10.22.
-//  Copyright © 2022 Jessica Ernst. All rights reserved.
-//
+///
+///  ImagePicker.swift
+///  ContactList
+///
+///  Created by Jessica Ernst on 06.10.22.
+///  Copyright © 2022 Jessica Ernst. All rights reserved.
+///
 
 import SwiftUI
 import UIKit

@@ -1,10 +1,10 @@
-//
-//  AddContact.swift
-//  ContactList
-//
-//  Created by Jessica Ernst on 29.09.22.
-//  Copyright © 2022 Jessica Ernst. All rights reserved.
-//
+///
+///  AddContact.swift
+///  ContactList
+///
+///  Created by Jessica Ernst on 29.09.22.
+///  Copyright © 2022 Jessica Ernst. All rights reserved.
+///
 
 import SwiftUI
 import CoreData

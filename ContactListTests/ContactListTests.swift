@@ -1,10 +1,10 @@
-//
-//  ContactListTests.swift
-//  ContactListTests
-//
-//  Created by Jessica Ernst on 29.09.22.
-//  Copyright © 2022 Jessica Ernst. All rights reserved.
-//
+///
+///  ContactListTests.swift
+///  ContactListTests
+///
+///  Created by Jessica Ernst on 29.09.22.
+///  Copyright © 2022 Jessica Ernst. All rights reserved.
+///
 
 import XCTest
 @testable import ContactList
